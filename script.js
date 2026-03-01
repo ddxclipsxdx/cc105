@@ -5,9 +5,50 @@
   const slidesContainer = document.getElementById('slidesContainer');
   const slides = document.querySelectorAll('.slide');
   const slideCounter = document.getElementById('slideCounter');
+  const cards = document.querySelectorAll('.card');
 
   const EVOL_START_INDEX = 2;
   const EVOL_END_INDEX = 6;
+
+  const DESIGN_WIDTH = 1300; // your desktop card width
+
+  /* ============================= */
+  /* MOBILE SCALE FUNCTION */
+  /* ============================= */
+
+  function applyMobileScale() {
+
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < DESIGN_WIDTH) {
+
+      const scale = screenWidth / DESIGN_WIDTH;
+
+      cards.forEach(card => {
+        card.style.transform = `scale(${scale})`;
+        card.style.transformOrigin = "top center";
+      });
+
+      slides.forEach(slide => {
+        slide.style.justifyContent = "flex-start";
+      });
+
+    } else {
+
+      cards.forEach(card => {
+        card.style.transform = "scale(1)";
+      });
+
+      slides.forEach(slide => {
+        slide.style.justifyContent = "center";
+      });
+
+    }
+  }
+
+  /* ============================= */
+  /* ACTIVE SLIDE DETECTION */
+  /* ============================= */
 
   function getActiveSlideIndex() {
 
@@ -31,6 +72,10 @@
 
     return activeIndex;
   }
+
+  /* ============================= */
+  /* UPDATE UI */
+  /* ============================= */
 
   function updateUI() {
 
@@ -60,6 +105,10 @@
     slideCounter.textContent = (activeIndex + 1) + " / " + slides.length;
   }
 
+  /* ============================= */
+  /* TIMELINE CLICK */
+  /* ============================= */
+
   timelineItems.forEach((item, index) => {
 
     item.addEventListener('click', function(e) {
@@ -80,15 +129,21 @@
 
   });
 
+  /* ============================= */
+  /* EVENT LISTENERS */
+  /* ============================= */
+
   slidesContainer.addEventListener('scroll', () => {
     requestAnimationFrame(updateUI);
   });
 
   window.addEventListener('load', () => {
+    applyMobileScale();
     setTimeout(updateUI, 100);
   });
 
   window.addEventListener('resize', () => {
+    applyMobileScale();
     requestAnimationFrame(updateUI);
   });
 
