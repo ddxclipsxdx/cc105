@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CC105 – ER Model · final order + thank you</title>
+  <title>CC105 – ER Model · Complete Presentation</title>
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- STICKY TIMELINE (evolution only) appears on slides 2..6 -->
+  <!-- STICKY TIMELINE (evolution only) appears on slides 3..7 -->
   <div class="timeline-header" id="timelineHeader">
     <div class="historical-title">
       <div class="small-head">HISTORICAL DEVELOPMENT</div>
@@ -27,7 +27,7 @@
   <!-- FLOATING SLIDE COUNTER -->
   <div class="slide-counter" id="slideCounter">1 / 16</div>
 
-  <!-- SLIDES – exact order: cover → what is ER → evolution details (1976 … Today) → components → thank you -->
+  <!-- SLIDES – complete 16 slides -->
   <div class="slides-container" id="slidesContainer">
 
     <!-- SLIDE 0: COVER (names only) -->
@@ -46,32 +46,68 @@
       </div>
     </section>
 
-    <!-- SLIDE 1: WHAT IS ER MODEL (second page) -->
+    <!-- SLIDE 1: WHAT IS ER MODEL -->
     <section class="slide" id="whatIsER">
       <div class="card">
         <h2>introduction</h2>
         <h1>What is an ER Model?</h1>
         <div class="def-grid">
           <div class="def-card">
-            <h4> Definition</h4>
+            <h4>Definition</h4>
             <p>A conceptual data model that represents the structure of a database using entities, attributes, and relationships.</p>
           </div>
           <div class="def-card">
-            <h4> Purpose</h4>
+            <h4>Purpose</h4>
             <p>To visually map how data is organized and connected, serving as a blueprint for database design.</p>
           </div>
           <div class="def-card">
-            <h4> Key Benefit</h4>
+            <h4>Key Benefit</h4>
             <p>Bridges the gap between business requirements and technical database implementation.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 2: 1976 cornerstone (with Dr. Chen image) -->
+    <!-- SLIDE 2: EVOLUTION OVERVIEW -->
+    <section class="slide" id="evolutionOverview">
+      <div class="card">
+        <h2>HISTORICAL DEVELOPMENT</h2>
+        <h1>Evolution of ER Model</h1>
+        <div class="evolution-timeline">
+          <div class="evolution-item">
+            <div class="evolution-dot"></div>
+            <strong>1976</strong><br>
+            Peter Chen
+          </div>
+          <div class="evolution-item">
+            <div class="evolution-dot"></div>
+            <strong>1980s</strong><br>
+            RDBMS
+          </div>
+          <div class="evolution-item">
+            <div class="evolution-dot"></div>
+            <strong>1990s</strong><br>
+            CASE Tools
+          </div>
+          <div class="evolution-item">
+            <div class="evolution-dot"></div>
+            <strong>2000s</strong><br>
+            UML
+          </div>
+          <div class="evolution-item">
+            <div class="evolution-dot"></div>
+            <strong>Today</strong><br>
+            Cloud/Big Data
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:30px;">The ER model has evolved significantly since its introduction in 1976, adapting to new technologies and methodologies.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: 1976 cornerstone (with Dr. Chen image) -->
     <section class="slide slide-top" id="evol1976">
       <div class="card">
-        <h2> 1976 · cornerstone</h2>
+        <h2>1976 · cornerstone</h2>
         <div class="two-col">
           <div>
             <h1 style="margin-top:0;">Peter Chen's proposal</h1>
@@ -82,51 +118,67 @@
             </ul>
           </div>
           <div class="portrait-placeholder">
-            <!-- Dr. Chen image placeholder (chen.png) -->
-            <img src="chen.png" alt="Dr. Peter Chen" onerror="this.style.display='none'; this.parentElement.innerHTML+='<div style=\'padding:40px; background:#e2e8f0; border-radius:20px;\'><span style=\'font-size:3rem;\'>👨‍🏫</span><br>chen.png</div>'">
+            <!-- Using placeholder image service instead of missing file -->
+            <img src="https://via.placeholder.com/320x240/3b82f6/ffffff?text=Dr.+Peter+Chen" alt="Dr. Peter Chen">
             <div class="caption">Dr. Peter Chen (1976)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 3: 1980s -->
+    <!-- SLIDE 4: 1980s -->
     <section class="slide" id="evol1980">
       <div class="card">
-        <h2> 1980s · adoption</h2>
+        <h2>1980s · adoption</h2>
         <h1>RDBMS embrace</h1>
         <p>Major databases (Oracle, DB2) integrated ER concepts. Mapping ER to relational tables became standard.</p>
+        <div style="margin-top:30px; display:flex; gap:20px; justify-content:center;">
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">Oracle</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">DB2</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">Ingres</span>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 4: 1990s -->
+    <!-- SLIDE 5: 1990s -->
     <section class="slide" id="evol1990">
       <div class="card">
-        <h2> 1990s · CASE tools</h2>
+        <h2>1990s · CASE tools</h2>
         <h1>Automated diagramming</h1>
         <p>ERwin, PowerDesigner automated ER diagram creation and forward engineering.</p>
+        <div style="margin-top:30px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">ERwin</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">PowerDesigner</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">Visio</span>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 5: 2000s -->
+    <!-- SLIDE 6: 2000s -->
     <section class="slide" id="evol2000">
       <div class="card">
-        <h2> 2000s · UML & enterprise</h2>
+        <h2>2000s · UML & enterprise</h2>
         <h1>Integration & UML</h1>
         <p>ER influenced UML class diagrams. Used in large‑scale enterprise modeling.</p>
       </div>
     </section>
 
-    <!-- SLIDE 6: Today -->
+    <!-- SLIDE 7: Today -->
     <section class="slide" id="evolToday">
       <div class="card">
-        <h2> today – cloud & big data</h2>
+        <h2>today – cloud & big data</h2>
         <h1>Still essential</h1>
         <p>ER remains core in fintech, cloud databases (AWS, GCP), and data engineering.</p>
+        <div style="margin-top:30px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">AWS</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">GCP</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">Azure</span>
+          <span style="padding:10px 20px; background:#f1f5f9; border-radius:30px;">Snowflake</span>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 7: building blocks (ER Components) -->
+    <!-- SLIDE 8: building blocks (ER Components) -->
     <section class="slide" id="erComponents">
       <div class="card">
         <h2>building blocks</h2>
@@ -148,7 +200,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 8: entities (strong/weak) -->
+    <!-- SLIDE 9: entities (strong/weak) -->
     <section class="slide" id="entityDetail">
       <div class="card">
         <h2>entities</h2>
@@ -158,10 +210,20 @@
           <li><strong>Weak Entity</strong> – depends on a strong entity, no key without owner (e.g., DEPENDENT identified via Employee).</li>
         </ul>
         <p style="margin-top:20px;">Notation: strong entity – rectangle; weak entity – double rectangle.</p>
+        <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+          <div style="text-align:center;">
+            <div style="border:3px solid #3b82f6; padding:15px 30px; border-radius:12px;">CUSTOMER</div>
+            <span>Strong Entity</span>
+          </div>
+          <div style="text-align:center;">
+            <div style="border:3px double #3b82f6; padding:15px 30px; border-radius:12px;">DEPENDENT</div>
+            <span>Weak Entity</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 9: attributes (balanced grid) -->
+    <!-- SLIDE 10: attributes (balanced grid) -->
     <section class="slide" id="attributeDetail">
       <div class="card">
         <h2>attributes</h2>
@@ -177,7 +239,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 10: relationship degree -->
+    <!-- SLIDE 11: relationship degree -->
     <section class="slide" id="relationshipDegree">
       <div class="card">
         <h2>relationship degree</h2>
@@ -188,10 +250,15 @@
           <li><strong>Ternary</strong> – three entities involved (e.g., Doctor prescribes Medicine to Patient).</li>
           <li><strong>N-ary</strong> – n entities connected.</li>
         </ul>
+        <div style="margin-top:30px; display:flex; justify-content:center;">
+          <div style="background:#f1f5f9; padding:20px; border-radius:24px;">
+            <p style="margin:0;"><strong>Example:</strong> Doctor, Patient, and Medicine all connected in one ternary relationship</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SLIDE 11: cardinality & participation -->
+    <!-- SLIDE 12: cardinality & participation -->
     <section class="slide" id="cardinality">
       <div class="card">
         <h2>constraints</h2>
@@ -218,21 +285,35 @@
       </div>
     </section>
 
-    <!-- SLIDE 12: ER diagram symbols -->
+    <!-- SLIDE 13: ER diagram symbols -->
     <section class="slide" id="erSymbols">
       <div class="card">
         <h2>visual notation</h2>
         <h1>ER Diagram Symbols</h1>
         <div class="symbol-row">
-          <div class="symbol-item"><div class="symbol-shape" style="border:3px solid #3b82f6;">Entity</div><span>Rectangle</span></div>
-          <div class="symbol-item"><div class="symbol-shape" style="border:3px solid #eab308;">Attribute</div><span>Ellipse / oval</span></div>
-          <div class="symbol-item"><div class="symbol-shape" style="border:3px solid #10b981; transform:rotate(45deg);"><span style="transform:rotate(-45deg);">Relation</span></div><span>Diamond</span></div>
-          <div class="symbol-item"><div class="symbol-shape" style="border:3px dashed #64748b;">Weak</div><span>Double rect</span></div>
+          <div class="symbol-item">
+            <div class="symbol-shape" style="border:3px solid #3b82f6;">Entity</div>
+            <span>Rectangle</span>
+          </div>
+          <div class="symbol-item">
+            <div class="symbol-shape" style="border:3px solid #eab308; border-radius:50%;">Attribute</div>
+            <span>Ellipse / oval</span>
+          </div>
+          <div class="symbol-item">
+            <div class="symbol-shape" style="border:3px solid #10b981; transform:rotate(45deg);">
+              <span style="transform:rotate(-45deg);">Relation</span>
+            </div>
+            <span>Diamond</span>
+          </div>
+          <div class="symbol-item">
+            <div class="symbol-shape" style="border:3px dashed #64748b;">Weak</div>
+            <span>Double rect</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 13: how to draw ER diagram -->
+    <!-- SLIDE 14: how to draw ER diagram -->
     <section class="slide" id="howToDraw">
       <div class="card">
         <h2>methodology</h2>
@@ -252,7 +333,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 14: benefits of ER diagram -->
+    <!-- SLIDE 15: benefits of ER diagram -->
     <section class="slide" id="benefits">
       <div class="card">
         <h2>advantages</h2>
@@ -267,7 +348,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 15: THANK YOU (ending) -->
+    <!-- SLIDE 16: THANK YOU (ending) -->
     <section class="slide" id="thankyou">
       <div class="card" style="text-align:center;">
         <div class="thankyou">Thank You</div>
