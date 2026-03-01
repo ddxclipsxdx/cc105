@@ -1,27 +1,26 @@
 (function() {
-
   const timelineHeader = document.getElementById('timelineHeader');
   const timelineItems = document.querySelectorAll('.timeline-item');
   const slidesContainer = document.getElementById('slidesContainer');
   const slides = document.querySelectorAll('.slide');
   const slideCounter = document.getElementById('slideCounter');
 
-  // Evolution slides:
+  // Evolution slides indices
   // 0 = cover
   // 1 = whatIsER
-  // 2 = evol1976
-  // 3 = evol1980
-  // 4 = evol1990
-  // 5 = evol2000
-  // 6 = evolToday
-  const EVOL_START_INDEX = 2;
-  const EVOL_END_INDEX = 6;
+  // 2 = evolutionOverview
+  // 3 = evol1976
+  // 4 = evol1980
+  // 5 = evol1990
+  // 6 = evol2000
+  // 7 = evolToday
+  const EVOL_START_INDEX = 3;  // evol1976 is at index 3
+  const EVOL_END_INDEX = 7;    // evolToday at index 7
 
   // -----------------------------
   // Detect Active Slide
   // -----------------------------
   function getActiveSlideIndex() {
-
     const containerRect = slidesContainer.getBoundingClientRect();
     const containerLeft = containerRect.left;
 
@@ -45,7 +44,6 @@
   // Update Timeline + Counter UI
   // -----------------------------
   function updateUI() {
-
     const activeIndex = getActiveSlideIndex();
 
     // Remove timeline padding from all slides first
@@ -53,7 +51,7 @@
       slide.classList.remove('with-timeline');
     });
 
-    // Show timeline only on evolution slides (2 to 6)
+    // Show timeline only on evolution slides (3 to 7)
     if (activeIndex >= EVOL_START_INDEX && activeIndex <= EVOL_END_INDEX) {
       timelineHeader.classList.add('visible');
       slides[activeIndex].classList.add('with-timeline');
@@ -63,7 +61,6 @@
 
     // Update timeline dots
     timelineItems.forEach((item, i) => {
-
       const correspondingSlideIndex = EVOL_START_INDEX + i;
 
       if (activeIndex === correspondingSlideIndex) {
@@ -71,7 +68,6 @@
       } else {
         item.classList.remove('active');
       }
-
     });
 
     // Update floating slide counter (1-indexed)
@@ -82,9 +78,7 @@
   // Timeline Dot Click Navigation
   // -----------------------------
   timelineItems.forEach((item, index) => {
-
     item.addEventListener('click', function(e) {
-
       e.stopPropagation();
 
       const targetSlideIndex = EVOL_START_INDEX + index;
@@ -96,9 +90,26 @@
           inline: 'start'
         });
       }
-
     });
+  });
 
+  // -----------------------------
+  // Keyboard Navigation
+  // -----------------------------
+  document.addEventListener('keydown', (e) => {
+    const activeIndex = getActiveSlideIndex();
+    
+    if (e.key === 'ArrowRight' && activeIndex < slides.length - 1) {
+      slides[activeIndex + 1].scrollIntoView({ 
+        behavior: 'smooth', 
+        inline: 'start' 
+      });
+    } else if (e.key === 'ArrowLeft' && activeIndex > 0) {
+      slides[activeIndex - 1].scrollIntoView({ 
+        behavior: 'smooth', 
+        inline: 'start' 
+      });
+    }
   });
 
   // -----------------------------
