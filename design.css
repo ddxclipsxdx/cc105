@@ -10,10 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================================= */
-/* TIMELINE HEADER */
-/* ================================= */
-
+/* timeline header – only for evolution slides (now slides 2..6) */
 .timeline-header {
   position: fixed;
   top: 0;
@@ -29,13 +26,8 @@ body {
   transition: transform 0.35s ease;
   transform: translateY(-100%);
 }
-
-.timeline-header.visible {
-  transform: translateY(0);
-}
-
 .slide.with-timeline {
-  padding-top: 140px;
+  padding-top: 140px;   /* space for header */
 }
 
 .slide-top {
@@ -43,11 +35,14 @@ body {
   padding-top: 120px;
 }
 
+.timeline-header.visible {
+  transform: translateY(0);
+}
+
 .historical-title {
   text-align: center;
   margin-bottom: 6px;
 }
-
 .historical-title .small-head {
   font-size: 0.75rem;
   letter-spacing: 3px;
@@ -55,13 +50,13 @@ body {
   text-transform: uppercase;
   font-weight: 600;
 }
-
 .historical-title .main-evol {
   font-size: 1.2rem;
   font-weight: 600;
   background: linear-gradient(145deg, #0f172a, #2c3e6d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top: 2px;
 }
 
 .dot-bar {
@@ -81,7 +76,6 @@ body {
   transition: transform 0.2s;
   min-width: 60px;
 }
-
 .timeline-item:hover {
   transform: translateY(-2px);
 }
@@ -109,10 +103,7 @@ body {
   color: #1e293b;
 }
 
-/* ================================= */
-/* DESKTOP SLIDE PRESENTATION */
-/* ================================= */
-
+/* slides container */
 .slides-container {
   display: flex;
   overflow-x: auto;
@@ -123,7 +114,6 @@ body {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-
 .slides-container::-webkit-scrollbar {
   display: none;
 }
@@ -147,14 +137,9 @@ body {
   background: white;
   border-radius: 40px;
   padding: 50px 70px;
-  box-shadow: 0 30px 60px -20px rgba(0,30,60,0.25),
-              0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 30px 60px -20px rgba(0,30,60,0.25), 0 2px 4px 0 rgba(0,0,0,0.02);
   border: 1px solid rgba(255,255,255,0.7);
 }
-
-/* ================================= */
-/* TYPOGRAPHY */
-/* ================================= */
 
 h1 {
   font-size: 3.2rem;
@@ -190,15 +175,35 @@ li {
   margin: 6px 0;
 }
 
-/* ================================= */
-/* LAYOUT BLOCKS */
-/* ================================= */
-
 .def-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   margin: 30px 0;
+}
+
+.def-card {
+  background: #f1f5f9;
+  padding: 25px 20px;
+  border-radius: 24px;
+  border-left: 8px solid #3b82f6;
+}
+
+.def-card h4 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 5px 0;
 }
 
 .attr-grid {
@@ -207,12 +212,25 @@ li {
   gap: 20px;
   margin: 25px 0;
 }
+.attr-item {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+}
+.attr-item strong {
+  color: #1e3a8a;
+  font-size: 1.3rem;
+}
 
 .two-col {
   display: flex;
   gap: 40px;
   align-items: center;
   flex-wrap: wrap;
+}
+.two-col > * {
+  flex: 1 1 300px;
 }
 
 .symbol-row {
@@ -221,6 +239,70 @@ li {
   gap: 30px;
   justify-content: center;
   margin: 30px 0;
+}
+.symbol-item {
+  text-align: center;
+  min-width: 120px;
+}
+.symbol-shape {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  background: #f8fafc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  border: 1px solid #cbd5e1;
+  font-weight: 600;
+}
+
+.diagram-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.entity-box {
+  padding: 16px 30px;
+  border: 3px solid #3b82f6;
+  border-radius: 20px;
+  background: #f0f6ff;
+  font-weight: 600;
+}
+.relation-diamond {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #10b981;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+}
+.relation-diamond span {
+  transform: rotate(-45deg);
+  font-weight: 600;
+}
+
+.portrait-placeholder {
+  background: #f1f5f9;
+  border-radius: 32px;
+  padding: 25px;
+  text-align: center;
+}
+.portrait-placeholder img {
+  width: 320px;        
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 30, 60, 0.25);
+}
+.portrait-placeholder .caption {
+  margin-top: 12px;
+  font-weight: 500;
+  color: #2563eb;
 }
 
 .cover-title {
@@ -231,7 +313,6 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .members {
   text-align: center;
   font-size: 1.5rem;
@@ -249,16 +330,14 @@ li {
   margin: 30px 0;
 }
 
-/* ================================= */
-/* SLIDE COUNTER */
-/* ================================= */
-
+/* slide counter – floating UI */
 .slide-counter {
   position: fixed;
   bottom: 25px;
   right: 35px;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -267,76 +346,5 @@ li {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   border: 1px solid rgba(59,130,246,0.15);
   z-index: 1000;
-}
-
-/* ================================= */
-/* CLEAN MOBILE VERSION */
-/* ================================= */
-
-@media (max-width: 768px) {
-
-  /* Switch to vertical layout */
-  .slides-container {
-    display: block;
-    height: auto;
-    overflow-x: hidden;
-    scroll-snap-type: none;
-  }
-
-  .slide {
-    flex: none;
-    min-height: auto;
-    padding: 70px 20px;
-    border-right: none;
-  }
-
-  /* Hide timeline on phone */
-  .timeline-header {
-    display: none;
-  }
-
-  .slide.with-timeline {
-    padding-top: 70px;
-  }
-
-  .card {
-    max-width: 100%;
-    padding: 40px 25px;
-    border-radius: 24px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-  }
-
-  p, li {
-    font-size: 1rem;
-  }
-
-  .cover-title {
-    font-size: 2.6rem;
-  }
-
-  .members {
-    font-size: 1.1rem;
-  }
-
-  .thankyou {
-    font-size: 2.3rem;
-  }
-
-  .attr-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .two-col {
-    flex-direction: column;
-    gap: 20px;
-  }
-
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
